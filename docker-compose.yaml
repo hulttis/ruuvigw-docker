@@ -1,0 +1,23 @@
+version: '3.7'
+
+# services
+services:
+# ruuvi gateway
+  ruuvigw:
+    container_name: ruuvigw
+    build: ./ruuvigw
+    restart: unless-stopped
+    hostname: ruuvigw
+    privileged: true
+    network_mode: "host"
+    volumes:
+      - ruuvigw-log:/var/log/ruuvigw
+
+# volumes
+volumes:
+  ruuvigw-log:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: "var/log/ruuvigw"
