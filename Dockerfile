@@ -7,7 +7,7 @@ RUN mkdir -p /var/log/ruuvigw
 
 WORKDIR /app
 RUN  git clone https://github.com/hulttis/ruuvigw.git
-WORKDIR /app/ruuvi
+WORKDIR /app/ruuvigw
 ADD . .
 
 RUN pip install --no-cache-dir -r requirements.txt
