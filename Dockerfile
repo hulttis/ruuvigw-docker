@@ -1,17 +1,13 @@
-FROM python:3.7.4
+FROM python:3.8
 
-RUN apt-get -y update
-RUN apt-get -y install bluez bluez-hcidump git
+RUN apt-get -y update && apt-get -y install git bluez bluez-hcidump && mkdir -p /var/log/ruuvigw
 
-RUN mkdir -p /var/log/ruuvigw
-
-WORKDIR /app
-RUN  git clone https://github.com/hulttis/ruuvigw.git
+RUN  git clone https://github.com/hulttis/ruuvigw.git /app/ruuvigw
 WORKDIR /app/ruuvigw
 ADD . .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-RUN cat ruuvigw.json
+#RUN cat ruuvigw.json
 
 CMD ["python", "./ruuvigw.py"]
