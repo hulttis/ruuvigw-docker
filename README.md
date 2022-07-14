@@ -1,7 +1,7 @@
 # RUUVIGW-DOCKER 1.1.4 (191120)
 **Ruuvitag InfluxDB / MQTT gateway ( python 3.8 ) Docker**
 
-See `https://github.com/hulttis/ruuvigw` for more inflrmation
+See `https://github.com/hulttis/ruuvigw` for more information
 
 ### INSTALLATION
 #### REQUIREMENTS
